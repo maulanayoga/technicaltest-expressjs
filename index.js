@@ -10,9 +10,16 @@ const port = 3000;
 //   storage: './database.sqlite'
 // });
 
-const sequelize = new Sequelize('TestExpress', 'yoga', 'yoga123', {
-  dialect: 'mssql',
-});
+const sequelize = new Sequelize(
+  {
+    database:'TestExpress', 
+    username:'yoga', 
+    password:'yoga123'
+  }, 
+    {
+      dialect: 'mssql',
+    }
+    );
 
 class Data extends Model {}
 Data.init({
